@@ -1,0 +1,28 @@
+<odoo>
+
+    <record id="view_partner_form"
+        model="ir.ui.view">
+        <field name="name">Partner OpenAcademy Form</field>
+        <field name='model'>res.partner</field>
+        <field name="inherit_id"
+            ref="base.view_partner_form"/>
+        <field name="arch"
+            type="xml">
+
+            <xpath expr="//page[@name='internal_notes']"
+                position="after">
+                <page name='open_academy'
+                    string="Open Academy">
+                    <group name="IsInstructor">
+                        <field name="instructor"/>
+                    </group>
+                    <group name="Sessions">
+                        <field name="session_ids"/>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

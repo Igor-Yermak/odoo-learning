@@ -1,0 +1,78 @@
+<odoo>
+  <data>
+
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view"
+      id="openacademy_course_list_form">
+      <field name="name">Courses</field>
+      <field name="model">open_academy.course</field>
+      <field name="arch"
+        type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="responsible_user_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- explicit form view definition -->
+    <record model="ir.ui.view"
+      id="openacademy_course_view_form">
+      <field name="name">Course form</field>
+      <field name="model">open_academy.course</field>
+      <field name="arch"
+        type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+          </group>
+          <notebook>
+            <page string="Description">
+              <group>
+                <field name="description"/>
+                <field name="responsible_user_id"/>
+              </group>
+            </page>
+            <page string="Sessions">
+              <field name="session_ids"/>
+            </page>
+          </notebook>
+        </form>
+      </field>
+    </record>
+
+    <!-- explicit form view definition -->
+    <record model="ir.ui.view"
+      id="openacademy_course_search_form">
+      <field name="name">Course search form</field>
+      <field name="model">open_academy.course</field>
+      <field name="arch"
+        type="xml">
+        <search>
+          <field name="title"/>
+          <field name="description"/>
+          <field name="responsible_user_id"/>
+
+          <filter name="current_user"
+            string="Current user"
+            domain="[('responsible_user_id', '=', uid)]" />
+          <group>
+            <filter name="by_responsible"
+              string="By responsible"
+              context="{'group_by': 'responsible_user_id'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window"
+      id="openacademy_course_action">
+      <field name="name">Courses</field>
+      <field name="res_model">open_academy.course</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>

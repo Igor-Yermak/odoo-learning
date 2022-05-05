@@ -1,0 +1,41 @@
+<odoo>
+  <data>
+
+    <!-- explicit form view definition -->
+    <record model="ir.ui.view"
+      id="openacademy_session_partners_transient_view_form">
+      <field name="name">Session form</field>
+      <field name="model">open_academy.fill_atend_trans</field>
+      <field name="arch"
+        type="xml">
+        <form>
+          <group>
+            <field name="session_id"/>
+            <field name="attendees_ids"/>
+          </group>
+          <footer>
+            <button name="add_partner_list"
+              type="object"
+              string="Add partner"
+              class="btn-primary"/>
+            <button special="cancel"
+              string="Cancel"
+              class="btn-default"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record id="launch_the_wizard_session_partners_transient"
+      model="ir.actions.act_window">
+      <field name="name">Launch the Wizard</field>
+      <field name="res_model">open_academy.fill_atend_trans</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+      <field name="binding_model_id"
+        ref="model_open_academy_session"/>
+    </record>
+
+  </data>
+</odoo>

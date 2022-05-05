@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+
+        <record id="sessions_rep"
+            model="ir.actions.report">
+            <field name="name">Session report</field>
+            <field name="model">open_academy.session</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">open_academy.sessions_report</field>
+            <field name="report_file">open_academy.sessions_report</field>
+            <field name="binding_model_id"
+                ref="model_open_academy_session"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,6 @@
+#connectionc db params
+host: '10.0.1.113'
+port: 8569
+db: 'o15-learn'
+user: 'admin'
+pass: 'admin'

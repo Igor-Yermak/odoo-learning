@@ -1,0 +1,28 @@
+<odoo>
+      <data>
+            <record id="object0"
+                  model="open_academy.course">
+                  <field name="name">Python - Beginner</field>
+                  <field name="title">Python - Beginner</field>
+                  <field name="description">Course for python developers</field>
+            </record>
+            <record id="object1"
+                  model="open_academy.course">
+                  <field name="name">Python - Middle Level</field>
+                  <field name="title">Python - Middle Level</field>
+                  <field name="description">Course for python developers - Middle Level</field>
+            </record>
+            <record id="object2"
+                  model="open_academy.course">
+                  <field name="name">Python - Senior</field>
+                  <field name="title">Python - Senior</field>
+                  <field name="description">Course for python developers - Senior Level</field>
+            </record>
+            <record id="object3"
+                  model="open_academy.course">
+                  <field name="name">SQL</field>
+                  <field name="title">SQL</field>
+                  <field name="description">Course about SQL</field>
+            </record>
+      </data>
+</odoo>
